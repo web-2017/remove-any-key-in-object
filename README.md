@@ -1,6 +1,6 @@
 # remove-any-key-in-object
 remove any key in object
-
+```
 const obj = [
   {
     name: "dsad",
@@ -48,3 +48,4 @@ function removeTrashKeys(obj) {
 removeTrashKeys(obj);
 
 console.log(obj);
+```
