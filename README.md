@@ -31,7 +31,7 @@ const obj = [
   }
 ];
 
-const remoceKeys = (props) => {
+const removeKeys = (props) => {
   getObj(props);
 
   function getObj(props) {
@@ -51,7 +51,7 @@ const remoceKeys = (props) => {
 };
 
 // Возможность сохранить новый массив
-const newObj = remoceKeys(obj);
+const newObj = removeKeys(obj);
 // так же старый массив будет изменен
 console.log(obj);
 
