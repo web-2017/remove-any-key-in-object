@@ -31,21 +31,28 @@ const obj = [
   }
 ];
 
-function removeTrashKeys(obj) {
-  getProp(obj);
+const remoceKeys = (props) => {
+  getObj(props);
 
-  function getProp(arr) {
-    for (const prop in arr) {
-      if (typeof arr[prop] === "object" ) {
-        getProp(arr[prop]);
-        if (arr[prop].created) delete arr[prop].created;
-        if (arr[prop].updated) delete arr[prop].updated;
+  function getObj(props) {
+    for (const key in props) {
+      if (typeof props === "object") {
+        getObj(props[key]);
+
+        ["data", "id"].forEach((item) => {
+          if (props[key][item]) delete props[key][item];
+        });
+
+        return props[key];
       }
     }
   }
-}
+  return props;
+};
 
-removeTrashKeys(obj);
-
+// Возможность сохранить новый массив
+const newObj = remoceKeys(obj);
+// так же старый массив будет изменен
 console.log(obj);
+
 ```
