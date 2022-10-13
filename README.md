@@ -1,6 +1,7 @@
-# remove-any-key-in-object
-remove any key in object
-```
+# How remove nasted deep key in object
+
+### Array example
+```js
 const obj = [
   {
     name: "dsad",
@@ -30,7 +31,10 @@ const obj = [
     updated: "asdf"
   }
 ];
+```
 
+#### Function
+```js 
 const removeKeys = (props) => {
   getObj(props);
 
@@ -50,9 +54,9 @@ const removeKeys = (props) => {
   return props;
 };
 
-// Возможность сохранить новый массив
+
 const newObj = removeKeys(obj);
-// так же старый массив будет изменен
+
 console.log(obj);
 
 ```
